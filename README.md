@@ -19,3 +19,5 @@ This website will enable people to save URL's to other websites and organize the
 **Database Data --** The database will store URL's, comments, and ratings for each recipe.
 
 **Websocket Data --** The website will notify you anytime a recipe is shared with you.
+
+![image](https://github.com/AriaChristensen/startup/assets/145092000/1dec23a5-4f0d-4d53-8a62-79126648258a)
