@@ -21,3 +21,7 @@ This website will enable people to save URL's to other websites and organize the
 **Websocket Data --** The website will notify you anytime a recipe is shared with you.
 
 ![image](https://github.com/AriaChristensen/startup/assets/145092000/1dec23a5-4f0d-4d53-8a62-79126648258a)
+
+## HTML
+
+Here is a link to my CodePen with some basic HTML commands: https://codepen.io/Aria-Christensen/pen/XWoEEwa
