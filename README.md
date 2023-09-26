@@ -10,6 +10,8 @@ Many people, myself included, grab a tasty-looking recipe from google when they 
 
 This website will enable people to save URL's to other websites and organize them into different tabs for easy navigation. It will let them share recipes with others and import recipes others shared with them. You can rate each recipe and add comments of your own for next time, as well as pictures of your results. You will also be able to add ingredients from a recipe to a shopping list.
 
+## Key Features
+
 **Authentication --** Users will log in to their own cookbook so that they can upload their own files
 
 **Database Data --** The database will store URL's, comments, and ratings for each recipe.
@@ -17,3 +19,17 @@ This website will enable people to save URL's to other websites and organize the
 **Websocket Data --** The website will notify you anytime a recipe is shared with you.
 
 ![image](https://github.com/AriaChristensen/startup/assets/145092000/1dec23a5-4f0d-4d53-8a62-79126648258a)
+
+## Deliverable 1
+
+This is basic html code for each page of the website. 
+
+[Home](https://github.com/AriaChristensen/startup/index.html)
+
+[All Recipes](https://github.com/AriaChristensen/startup/allRecipes.html)
+
+[Favorites](https://github.com/AriaChristensen/startup/favorites.html)
+
+[Shared](https://github.com/AriaChristensen/startup/shared.html)
+
+[Cart](https://github.com/AriaChristensen/startup/cart.html)
