@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Tell browsers not to scale the viewport automatically -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shared</title>
+    <!-- update icon-->
+    <link rel="icon" href="favicon.ico" />
+  </head>
+  <body>
+    <!-- Use header, main, and footer elements to give semantic structure -->
+    <header>
+      <h1>Recipe Saver<sup>&reg;</sup></h1>
+
+      <!-- Navigation elements -->
+      <nav>
+        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
+        <!--fix navigation links-->
+            <menu>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="play.html">Favorites</a></li>
+          <li><a href="scores.html">Cart</a></li>
+          <li><a href="about.html">Shared Recipes</a></li>
+          <li><a href="scores.html">All Recipes</a></li>
+        </menu>
+      </nav>
+
+      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
+      <hr />
+    </header>
+
+    <main>
+      <nav>
+        <menu>
+            <!--Replace links with link to specific recipe-->
+            <!--Replace images with images from linked recipes-->
+            <li>
+                <a href = "allRecipes.html">Recipe 1</a>
+                <p>Shared by: User1</p>
+                <br />
+                <img alt="Recipe" src="https://th.bing.com/th/id/OIP.o1spqHBWB97Y375svkC4ngHaGl?pid=ImgDet&rs=1" width="200px"/>
+            </li>
+
+            <li>
+                <a href = "allRecipes.html">Recipe 2</a>
+                <p>Shared by: User2</p>
+                <br />
+                <img alt="Recipe" src="https://th.bing.com/th/id/OIP.o1spqHBWB97Y375svkC4ngHaGl?pid=ImgDet&rs=1" width="200px"/>
+            </li>
+
+            <li>
+                <a href = "allRecipes.html">Recipe 3</a>
+                <p>Shared by: User3</p>
+                <br />
+                <img alt="Recipe" src="https://th.bing.com/th/id/OIP.o1spqHBWB97Y375svkC4ngHaGl?pid=ImgDet&rs=1" width="200px"/>
+            </li>
+        </menu>
+      </nav>
+    </main>
+
+    <footer>
+      <hr />
+      <span class="text-reset">Aria Christensen</span>
+      <br />
+
+      <!-- fix url -->
+      <a href="https://github.com/webprogramming260/simon-html">GitHub</a>
+    </footer>
+  </body>
+</html>
