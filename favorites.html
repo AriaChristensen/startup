@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Recipes</title>
+    <title>Favorites</title>
     <!-- update icon-->
     <link rel="icon" href="favicon.ico" />
   </head>
@@ -65,46 +65,33 @@
 
         <li>
           <div>
-            <button>+ New Section</button>
+            <button>All</button>
           </div>
         </li>
       </ul>
+      <nav>
+        <menu>
+            <!--Replace links with link to specific recipe-->
+            <!--Replace images with images from linked recipes-->
+            <li>
+                <a href = "allRecipes.html">Recipe 1</a>
+                <br />
+                <img alt="Recipe" src="https://th.bing.com/th/id/OIP.o1spqHBWB97Y375svkC4ngHaGl?pid=ImgDet&rs=1" width="200px"/>
+            </li>
 
-      <h1>Recipes</h1>
-      <select id="selectRecipe" name="recipeChoice">
-        <option>+ New Recipe</option>
-      </select>
+            <li>
+                <a href = "allRecipes.html">Recipe 2</a>
+                <br />
+                <img alt="Recipe" src="https://th.bing.com/th/id/OIP.o1spqHBWB97Y375svkC4ngHaGl?pid=ImgDet&rs=1" width="200px"/>
+            </li>
 
-      <form method="get">
-        <input type="text" id="recipeName" placeholder="Recipe Title">
-        <button>Favorite</button>
-        <br />
-
-        <input type="url" id="picURL" placeholder="Link to Picture">
-        <br />
-
-        <input type="url" id="recipeURL" placeholder="Link to Recipe">
-        <br />
-
-        <fieldset><legend>Rating</legend>
-          <label for="oneStar">1 Star</label>
-          <input type="checkbox" id="1Star" name="1StarCheck" value="1StarCheckbox" />
-          <label for="twoStar">2 Stars</label>
-          <input type="checkbox" id="2Star" name="2StarCheck" value="2StarCheckbox" />
-          <label for="threeStar">3 Stars</label>
-          <input type="checkbox" id="3Star" name="3StarCheck" value="3StarCheckbox" />
-          <label for="fourStar">4 Stars</label>
-          <input type="checkbox" id="4Star" name="4StarCheck" value="4StarCheckbox" />
-          <label for="fiveStar">5 Stars</label>
-          <input type="checkbox" id="5Star" name="5StarCheck" value="5StarCheckbox" />
-        </fieldset>
-
-        <label for="textarea">Comments: </label>
-        <textarea id="textarea" name="comments"></textarea>
-      </form>
-
-      <h1>Ingredients</h1>
-      <textarea id="textarea" name="ingredients"></textarea>
+            <li>
+                <a href = "allRecipes.html">Recipe 3</a>
+                <br />
+                <img alt="Recipe" src="https://th.bing.com/th/id/OIP.o1spqHBWB97Y375svkC4ngHaGl?pid=ImgDet&rs=1" width="200px"/>
+            </li>
+        </menu>
+      </nav>
     </main>
 
     <footer>
