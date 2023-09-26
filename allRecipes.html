@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simon HTML</title>
+    <title>All Recipes</title>
+    <!-- update icon-->
     <link rel="icon" href="favicon.ico" />
   </head>
   <body>
@@ -30,13 +31,79 @@
     </header>
 
     <main>
-      <h1>Welcome</h1>
-      <p>Login to get started</p>
-      <form method="get" action="play.html">
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Your name here" />
-        <button type="submit">Login</button>
+      <h1>Sections</h1>
+      <ul>
+        <li>
+          <div>
+            <button>Breakfasts</button>
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <button>Lunches</button>
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <button>Dinners</button>
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <button>Desserts</button>
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <button>Sides</button>
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <button>+ New Section</button>
+          </div>
+        </li>
+      </ul>
+
+      <h1>Recipes</h1>
+      <select id="selectRecipe" name="recipeChoice">
+        <option>+ New Recipe</option>
+      </select>
+
+      <form method="get">
+        <input type="text" id="recipeName" placeholder="Recipe Title">
+        <br />
+
+        <input type="url" id="picURL" placeholder="Link to Picture">
+        <br />
+
+        <input type="url" id="recipeURL" placeholder="Link to Recipe">
+        <br />
+
+        <fieldset><legend>Rating</legend>
+          <label for="oneStar">1 Star</label>
+          <input type="checkbox" id="1Star" name="1StarCheck" value="1StarCheckbox" />
+          <label for="twoStar">2 Stars</label>
+          <input type="checkbox" id="2Star" name="2StarCheck" value="2StarCheckbox" />
+          <label for="threeStar">3 Stars</label>
+          <input type="checkbox" id="3Star" name="3StarCheck" value="3StarCheckbox" />
+          <label for="fourStar">4 Stars</label>
+          <input type="checkbox" id="4Star" name="4StarCheck" value="4StarCheckbox" />
+          <label for="fiveStar">5 Stars</label>
+          <input type="checkbox" id="5Star" name="5StarCheck" value="5StarCheckbox" />
+        </fieldset>
+
+        <label for="textarea">Comments: </label>
+        <textarea id="textarea" name="comments"></textarea>
       </form>
+
+      <h1>Ingredients</h1>
+      <textarea id="textarea" name="ingredients"></textarea>
     </main>
 
     <footer>
