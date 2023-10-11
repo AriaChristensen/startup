@@ -26,3 +26,9 @@ Here is a link to my CodePen with some syntax for using inputs: https://codepen.
 Note that when you add things after an = sign, they need to be enclosed in "quotes".
 
 Here is a link to my CodePen with syntax for media: https://codepen.io/Aria-Christensen/pen/KKbRgjy
+
+## CSS
+
+Here is a link to my CodePen with some basic CSS commands: https://codepen.io/Aria-Christensen/pen/abPPpbV
+
+CSS is in charge of styling your webpage.
