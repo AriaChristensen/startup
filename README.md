@@ -2,7 +2,7 @@
 
 Web Address: http://34.229.135.174/
 
-Domain: https://aria.jaromc.com
+Domain: https://startup.jaromc.com
 
 ## Online Recipe Saver
 
