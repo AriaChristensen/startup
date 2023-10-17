@@ -28,6 +28,11 @@ Note that when you add things after an = sign, they need to be enclosed in "quot
 Here is a link to my CodePen with syntax for media: https://codepen.io/Aria-Christensen/pen/KKbRgjy
 
 ## CSS
+Here is a link to my CodePen with some basic CSS: https://codepen.io/AriaChristensen/pen/MWZMRxj.
+
+CSS is used to style webpages and can do easy animations.
+
+## CSS
 
 Here is a link to my CodePen with some basic CSS commands: https://codepen.io/Aria-Christensen/pen/abPPpbV
 
