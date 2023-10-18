@@ -1,5 +1,4 @@
-.button {
-    background-color: #4CAF50; /* Green */
+button {
     border: none;
     color: white;
     padding: 15px 32px;
@@ -7,12 +6,81 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    margin: .5em;
+    width: 150px;
+}
+
+.content{
+    display: flex;
+}
+
+.sections{
+    display: block;
+    width: 15%;
+    background-color: #b9dcf6;
+    padding: 1.5em;
+}
+
+.recipes{
+    display: block;
+    width: 15%;
+    background-color: #d3e8f8;
+}
+
+.recipe{
+    display: block;
+    width: 55%;
+    background-color: white;
+    padding: 1.5em;
+}
+
+.ingredients{
+    display: block;
+    width: 15%;
+    background-color: rgb(211, 216, 221);
+    padding: 1.5em;
+}
+
+.breakfast {
+    background-color: red;
+    width: 1000px;
+    text-align: left;
+    padding-left: 3em;
 }
 
 .lunch {
     background-color: orange;
 }
 
-h1 {
-    color: green;
+.dinner {
+    background-color: yellow;
+}
+
+.dessert {
+    background-color: green;
+}
+
+.side {
+    background-color: blue;
+}
+
+.new {
+    background-color: purple;
+}
+
+.recipe-btn {
+    background-color: white;
+    width: 100%;
+    color: black;
+    padding: 0;
+    margin: 0;
+}
+
+.checked {
+    color: orange;
+}
+
+.favorite {
+    background-color: white;
+    width: 40;
 }

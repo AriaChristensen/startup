@@ -51,6 +51,7 @@ header h1 {
 footer a{
     text-decoration: none;
     color: rgb(164, 164, 164);
+    padding-top: 0;
 }
 
 .login {
@@ -60,10 +61,6 @@ footer a{
     align-items: center;
     justify-content: center;
     text-align: center;
-}
-
-button {
-    background-color: green;
 }
 
 @media (orientation: portrait) {

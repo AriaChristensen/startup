@@ -17,8 +17,8 @@
 
   
   <link rel="stylesheet" href="main.css" />
-  <link ref="stylesheet" href="recipes.css"/>
-  
+  <link rel="stylesheet" href="recipes.css"/>
+
   </head>
   <body>
     <!-- Use header, main, and footer elements to give semantic structure -->
@@ -52,82 +52,71 @@
     </header>
 
     <main>
-      <div class="sections">
-        <h1>Sections</h1>
-        <ul>
-          <li>
-            <div>
-              <button type="button" class="btn btn-primary">Breakfasts</button>
-            </div>
-          </li>
+      <div class="content">
+        <div class="sections">
+          <div>
+            <button type="button" class="breakfast">Breakfasts</button>
+          </div>
 
-          <li>
-            <div>
-              <button type="button" class="lunch">Lunches</button>
-            </div>
-          </li>
+          <div>
+            <button type="button" class="lunch">Lunches</button>
+          </div>
 
-          <li>
-            <div>
-              <button type="button" class="dinner">Dinners</button>
-            </div>
-          </li>
+          <div>
+            <button type="button" class="dinner">Dinners</button>
+          </div>
 
-          <li>
-            <div>
-              <button type="button" class="dessert">Desserts</button>
-            </div>
-          </li>
+          <div>
+            <button type="button" class="dessert">Desserts</button>
+          </div>
 
-          <li>
-            <div>
-              <button type="button" class="side">Sides</button>
-            </div>
-          </li>
+          <div>
+            <button type="button" class="side">Sides</button>
+          </div>
 
-          <li>
-            <div>
-              <button type="button" class="new">+ New Section</button>
-            </div>
-          </li>
-        </ul>
+          <div>
+            <button type="button" class="new">+ New Section</button>
+          </div>
+
+        </div>
+
+        <div class="recipes">
+          <button type="button" class="recipe-btn">+ New Recipe</button>
+        </div>
+
+        <div class="recipe">
+          <form method="get">
+            <input type="text" id="recipeName" placeholder="Recipe Title">
+            <button class="favorite"><img src="favorite.png" width="40"/></button>
+            <br />
+
+            <input type="url" id="picURL" placeholder="Link to Picture">
+            <br />
+
+
+            <input type="url" id="recipeURL" placeholder="Link to Recipe">
+            <br />
+
+
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <h3>Rating</h3>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <br />
+
+            <label for="textarea">Comments: </label> <br />
+            <textarea id="textarea" name="comments"></textarea>
+          </form>
+        </div>
+
+        <div class="ingredients">
+          <p>Add ingredients to cart:</p>
+          <textarea id="textarea" name="ingredients"></textarea>
+        </div>
       </div>
-
-      <h1>Recipes</h1>
-      <select id="selectRecipe" name="recipeChoice">
-        <option>+ New Recipe</option>
-      </select>
-
-      <form method="get">
-        <input type="text" id="recipeName" placeholder="Recipe Title">
-        <button>Favorite</button>
-        <br />
-
-        <input type="url" id="picURL" placeholder="Link to Picture">
-        <br />
-
-        <input type="url" id="recipeURL" placeholder="Link to Recipe">
-        <br />
-
-        <fieldset><legend>Rating</legend>
-          <label for="oneStar">1 Star</label>
-          <input type="checkbox" id="1Star" name="1StarCheck" value="1StarCheckbox" />
-          <label for="twoStar">2 Stars</label>
-          <input type="checkbox" id="2Star" name="2StarCheck" value="2StarCheckbox" />
-          <label for="threeStar">3 Stars</label>
-          <input type="checkbox" id="3Star" name="3StarCheck" value="3StarCheckbox" />
-          <label for="fourStar">4 Stars</label>
-          <input type="checkbox" id="4Star" name="4StarCheck" value="4StarCheckbox" />
-          <label for="fiveStar">5 Stars</label>
-          <input type="checkbox" id="5Star" name="5StarCheck" value="5StarCheckbox" />
-        </fieldset>
-
-        <label for="textarea">Comments: </label>
-        <textarea id="textarea" name="comments"></textarea>
-      </form>
-
-      <h1>Ingredients</h1>
-      <textarea id="textarea" name="ingredients"></textarea>
     </main>
 
     <footer>
