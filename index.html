@@ -7,6 +7,13 @@
     <title>Recipe Saver HTML</title>
     <link rel="icon" href="cutlery.png" />
     <link rel="stylesheet" href="main.css" />
+
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+    crossorigin="anonymous"
+  />
   </head>
   <body>
     <!-- Use header, main, and footer elements to give semantic structure -->
@@ -40,13 +47,19 @@
     </header>
 
     <main>
-      <h1>Welcome</h1>
-      <p>Login to get started</p>
-      <form method="get" action="play.html">
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Your name here" />
-        <button type="submit">Login</button>
-      </form>
+      <div class="login">
+        <p>
+          <h1>Welcome</h1>
+
+          <br><p>Login to get started</p></br>
+
+          <br><form method="get" action="play.html">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Your name here" />
+            <button type="submit">Login</button>
+          </form></br>
+        </p>
+      </div>
     </main>
 
     <footer>

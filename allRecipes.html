@@ -7,7 +7,18 @@
     <title>All Recipes</title>
     <!-- update icon-->
     <link rel="icon" href="cutlery.png" />
-    <link rel="stylesheet" href="main.css" />
+
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+    crossorigin="anonymous"
+  />
+
+  
+  <link rel="stylesheet" href="main.css" />
+  <link ref="stylesheet" href="recipes.css"/>
+  
   </head>
   <body>
     <!-- Use header, main, and footer elements to give semantic structure -->
@@ -41,44 +52,46 @@
     </header>
 
     <main>
-      <h1>Sections</h1>
-      <ul>
-        <li>
-          <div>
-            <button>Breakfasts</button>
-          </div>
-        </li>
+      <div class="sections">
+        <h1>Sections</h1>
+        <ul>
+          <li>
+            <div>
+              <button type="button" class="btn btn-primary">Breakfasts</button>
+            </div>
+          </li>
 
-        <li>
-          <div>
-            <button>Lunches</button>
-          </div>
-        </li>
+          <li>
+            <div>
+              <button type="button" class="lunch">Lunches</button>
+            </div>
+          </li>
 
-        <li>
-          <div>
-            <button>Dinners</button>
-          </div>
-        </li>
+          <li>
+            <div>
+              <button type="button" class="dinner">Dinners</button>
+            </div>
+          </li>
 
-        <li>
-          <div>
-            <button>Desserts</button>
-          </div>
-        </li>
+          <li>
+            <div>
+              <button type="button" class="dessert">Desserts</button>
+            </div>
+          </li>
 
-        <li>
-          <div>
-            <button>Sides</button>
-          </div>
-        </li>
+          <li>
+            <div>
+              <button type="button" class="side">Sides</button>
+            </div>
+          </li>
 
-        <li>
-          <div>
-            <button>+ New Section</button>
-          </div>
-        </li>
-      </ul>
+          <li>
+            <div>
+              <button type="button" class="new">+ New Section</button>
+            </div>
+          </li>
+        </ul>
+      </div>
 
       <h1>Recipes</h1>
       <select id="selectRecipe" name="recipeChoice">
