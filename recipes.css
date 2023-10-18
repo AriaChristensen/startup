@@ -27,6 +27,20 @@ button {
     background-color: #d3e8f8;
 }
 
+.favorites {
+    display: block;
+    width: 85%;
+    background-color: white;
+    padding: 1em;
+}
+
+.shared {
+    display: block;
+    width: 100%;
+    background-color: white;
+    margin: 1em;
+}
+
 .recipe{
     display: block;
     width: 55%;
@@ -46,26 +60,37 @@ button {
     width: 1000px;
     text-align: left;
     padding-left: 3em;
+    margin: .5em;
 }
 
 .lunch {
     background-color: orange;
+    margin: .5em;
 }
 
 .dinner {
     background-color: yellow;
+    margin: .5em;
 }
 
 .dessert {
     background-color: green;
+    margin: .5em;
 }
 
 .side {
     background-color: blue;
+    margin: .5em;
 }
 
 .new {
     background-color: purple;
+    margin: .5em;
+}
+
+.all {
+    background-color: purple;
+    margin: .5em;
 }
 
 .recipe-btn {
@@ -83,4 +108,8 @@ button {
 .favorite {
     background-color: white;
     width: 40;
+}
+
+.recp {
+    padding: .5em;
 }

@@ -8,6 +8,7 @@
     <!-- update icon-->
     <link rel="icon" href="cutlery.png" />
     <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="cart.css"/>
 
     <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
@@ -50,31 +51,42 @@
     <main>
       <h1>Shopping List</h1>
       <!--Replace all references with reference to proper recipe-->
-      <ul>
-        <li>
+      <table class="cart">
+        <tr class="ing">
+          <td> 
             <input type="checkbox" id="ing1" name="ingredient1" value="ingredient1" />
             <a href="allRecipes.html">Ingredient 1</a>
-            <button>Delete</button>
-        </li>
+          </td>
+          <td>
+            <button><img src="delete.png" width="20"/></button>
+          </td>
+        </tr>
 
-        <li>
+        <tr class="ing">
+          <td> 
             <input type="checkbox" id="ing2" name="ingredient2" value="ingredient2" />
             <a href="allRecipes.html">Ingredient 2</a>
-            <button>Delete</button>
-        </li>
+          </td>
+          <td>
+            <button><img src="delete.png" width="20"/></button>
+          </td>
+        </tr>
 
-        <li>
+        <tr class="ing">
+          <td> 
             <input type="checkbox" id="ing3" name="ingredient3" value="ingredient3" />
             <a href="allRecipes.html">Ingredient 3</a>
-            <button>Delete</button>
-        </li>
-      </ul>
+          </td>
+          <td>
+            <button><img src="delete.png" width="20"/></button>
+          </td>
+        </tr>
+      </table>
 
-      <button>Remove All Checked</button>
+      <button class="remove">Remove All Checked</button>
     </main>
 
     <footer>
-      <hr />
       <span class="text-reset">Aria Christensen</span>
       <br />
 
