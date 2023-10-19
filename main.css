@@ -6,7 +6,12 @@ header {
     background-color: #1877a6;
     color: white;
     vertical-align: middle;
-    flex: 0 80px;
+    flex: 0 0px;
+}
+
+main {
+    flex: 1;
+    flex-direction: row;
 }
 
 footer {
@@ -17,13 +22,9 @@ footer {
 }
 
 .header-flex {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 1em;
-    align-items: center;
-    margin-left: 1em;
-    text-align: left;
-    justify-content: last baselin;
+    display: block;
+    height: 50px;
+    padding: .5em;
 }
 
 .menu-flex {
@@ -32,6 +33,7 @@ footer {
     gap: 20px;
     align-items: center;
     text-align: center;
+    padding: 0em 1em;
 }
 
 header a {
@@ -40,13 +42,15 @@ header a {
     font-size: 14;
 } 
 
-header h1 {
+header h3 {
     font-size: 10;
+    float: left;
 }
 
 .welcome {
     text-align: right;
     margin-right: 1em;
+    float: right;
 }
 
 footer a{

@@ -1,13 +1,14 @@
 button {
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 1em 1em;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     margin: .5em;
-    width: 150px;
+    width: 95%;
+    overflow: hidden;
 }
 
 .content{
@@ -15,7 +16,8 @@ button {
 }
 
 .sections{
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: 15%;
     background-color: #b9dcf6;
     padding: 1.5em;
@@ -24,6 +26,12 @@ button {
 .recipes{
     display: block;
     width: 15%;
+    background-color: #d3e8f8;
+}
+
+.recipes-dropdown {
+    display: none;
+    width: 100%;
     background-color: #d3e8f8;
 }
 
@@ -57,9 +65,9 @@ button {
 
 .breakfast {
     background-color: red;
-    width: 1000px;
+    width: 150%;
     text-align: left;
-    padding-left: 3em;
+    padding-left: 30%;
     margin: .5em;
 }
 
@@ -112,4 +120,47 @@ button {
 
 .recp {
     padding: .5em;
+}
+
+@media (orientation: portrait) {
+    .content {
+        flex-direction: column;
+    }
+
+    .sections {
+        flex-direction: row;
+        width: 100%;
+        overflow-y: auto;
+    }
+
+    .breakfast {
+        border: thick white solid;
+        color: white;
+        padding: 1em 1em;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: .5em;
+        width: 95%;
+        overflow: hidden;
+    }
+
+    .recipes {
+        display: none;
+    }
+
+    .recipes-dropdown {
+        display: block;
+    }
+
+    .recipe {
+        width: 100%;
+    }
+    
+
+    .ingredients {
+        width: 100%;
+    }
+
 }

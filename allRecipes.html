@@ -25,28 +25,30 @@
     <header>
       <div class="header-flex">
         <div>
-          <h3><img src="cutlery.png" width="20" background-color="white"/> Recipe Saver<sup>&reg;</sup></h3>
+          <a href="index.html"><h3><img src="cutlery.png" width="15em" 
+            background-color="white"/> Recipe Saver<sup>&reg;</sup></h3></a>
         </div>
-        <div class="menu-flex">
-          <div>
-            <a href="index.html">Home</a>
-          </div>
-          <div>
-            <a href="favorites.html">Favorites</a>
-          </div>
-          <div>
-            <a href="cart.html">Cart</a>
-          </div>
-          <div>
-            <a href="shared.html">Shared Recipes</a>
-          </div>
-          <div>
-            <a href="allRecipes.html">All Recipes</a>
-          </div>
-        </div>
-
+        
         <div class="welcome">
           Welcome, User
+        </div>
+      </div>
+
+      <div class="menu-flex">
+        <div>
+          <a href="index.html">Home</a>
+        </div>
+        <div>
+          <a href="favorites.html">Favorites</a>
+        </div>
+        <div>
+          <a href="cart.html">Cart</a>
+        </div>
+        <div>
+          <a href="shared.html">Shared Recipes</a>
+        </div>
+        <div>
+          <a href="allRecipes.html">All Recipes</a>
         </div>
       </div>
     </header>
@@ -84,10 +86,17 @@
           <button type="button" class="recipe-btn">+ New Recipe</button>
         </div>
 
+        <div class="recipes-dropdown">
+          <select id="selectRecipe" name="recipeChoice">
+            <option>+ New Recipe</option>
+            <option>Option</option>
+          </select>
+        </div>
+
         <div class="recipe">
           <form method="get">
-            <input type="text" id="recipeName" placeholder="Recipe Title">
             <button class="favorite"><img src="favorite.png" width="40"/></button>
+            <input type="text" id="recipeName" placeholder="Recipe Title">
             <br />
 
             <input type="url" id="picURL" placeholder="Link to Picture">
@@ -127,3 +136,4 @@
     </footer>
   </body>
 </html>
++
