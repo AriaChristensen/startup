@@ -33,3 +33,14 @@ This is basic html code for each page of the website.
 [Shared](https://github.com/AriaChristensen/startup/shared.html)
 
 [Cart](https://github.com/AriaChristensen/startup/cart.html)
+
+## Deliverable 2
+
+This is the code for each page of the website with CSS styling added. The website should be responsive to 
+both desktop and mobile screen sizes. The buttons will link to appropriate pages once Javascript is added.
+
+[Main](https://github.com/AriaChristensen/startup/main.css)
+
+[Recipes](https://github.com/AriaChristensen/startup/recipes.css)
+
+[Cart](https://github.com/AriaChristensen/startup/cart.css)
