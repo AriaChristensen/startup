@@ -98,50 +98,79 @@ What does the following code using map with an array output?
 What does the following code output using getElementByID and addEventListener?
 
 *
+*
+*
 
 What does the following line of Javascript do using a # selector?
 
-*
+* It selects an element by ID, `.` selects by class.
+  ```
+  <li id="li-with-id">List item with an ID.</li>
+
+  $("#li-with-id").replaceWith("<p>Socks</p>");
+  ```
+  This code replaces "List item with and ID" with "socks"
 
 Which of the following are true? (mark all that are true about the DOM)
 
 *
+*
+*
 
 By default, the HTML span element has a default CSS display property value of: 
 
-*
+* `<span>` elements display inline
 
 How would you use CSS to change all the div elements to have a background color of red?
 
-*
+* ```
+  div {
+    background-color: "red";
+  }
+  ```
 
 How would you display an image with a hyperlink in HTML?
 
-*
+* `<a href="https://www.example.com"><img src="image.jpg" alt="Description of the image"></a>`
 
 In the CSS box model, what is the ordering of the box layers starting at the inside and working out?
 
-*
+* See picture above. Margin -> Border -> Padding -> Content
 
 Given the following HTML, what CSS would you use to set the text "troubl" to green and leave the "double" text unaffected?
 
+*
+*
 *
 
 What will the following code output when executed using a for loop and console.log?
 
 *
+*
+*
 
 How would you use JavaScript to select an element with the id of “byu” and change the text color of that element to green?
 
-*
+* ```
+  // Get the element by id
+  var element = document.getElementById("byu");
+  
+  // Change the text color to red
+  element.style.color = "green";
+  ```
 
 What is the opening HTML tag for a paragraph, ordered list, unordered list, second level heading, first level heading, third level heading?
 
-*
+* paragraph: `<p>`
+* ordered list: `<ol>`
+* unordered list: `<ul>`
+* second level heading: `<h2>`
+* first level heading: `<h1>`
+* third level heading: `<h3>`
 
 How do you declare the document type to be html?
 
-*
+* `<!DOCTYPE html>`
 
 What is valid javascript syntax for if, else, for, while, switch statements?
 
