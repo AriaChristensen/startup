@@ -146,6 +146,18 @@ button {
     display: block;
 }
 
+.top-line {
+    display: block;
+}
+
+.top-line p {
+    float: left;
+}
+
+.top-lin img {
+    float: right;
+}
+
 #newRecipe {
     display: none;
 }

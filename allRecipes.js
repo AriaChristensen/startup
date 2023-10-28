@@ -1,12 +1,21 @@
-const userNameEl = document.querySelector('.user-name');
-console.log(userNameEl);
-userNameEl.textContent = getUserName();
+class Page {
+    constructor() {
+        const userNameEl = document.querySelector('.user-name');
+        //console.log(userNameEl); // this is returning null?
+       // userNameEl.textContent = this.getUserName();
+    }
 
-function getUserName() {
-    return localStorage.getItem('userName') ?? 'Mystery user';
+    getUserName() {
+        return localStorage.getItem('userName') ?? 'Mystery user';
+    }
 }
 
+const page = new Page;
 //FIXME: fix username to show up ^^
+
+let sel = document.getElementById("ddnList");
+//sel.addEventListener("change", showRecipeDdn);
+//FIXME: sel is null
 
 const testRecipe = {
     favorite: true,
@@ -18,13 +27,17 @@ const testRecipe = {
 };
 
 function addRecipe() {
-    form = document.getElementById("new-recipe");
+
+    const form = document.getElementById("new-recipe");
     const formData = new FormData(form);
     const obj = {};
- 
+    
+    
+
     for (let [key, value] of formData.entries()) { 
         formData.forEach((value, key) => (obj[key] = value));
     }
+    
 
     addToDatabase(obj);
     addToList(testRecipe);
@@ -41,19 +54,31 @@ function addToList(obj) {
 
     btn.type = "button";
 
-    btn.class = "recipe-btn"
+    btn.className = "recipe-btn"
 
     //update to show correct recipe
-    btn.addEventListener("onclick", showRecipe(fakeRecipe) );
+    btn.addEventListener("click", function() {
+        showRecipe(fakeRecipe);
+    }, false);
 
-    const list = document.getElementsByClassName("recipes");
-    document.list.appendChild(btn);
+    const list = document.getElementsByClassName("recipe-btn");
+    const el=list[list.length-1];
+    
+    el.appendChild(btn);
+
 
     var opt = document.createElement("option");
     opt.textContent = obj.recipeName;
+    //update to show correct recipe
+    opt.addEventListener("click", function() {
+        showRecipe(fakeRecipe);
+    }, false);
+    //FIXME: get onclick function working
 
-    const dropdown = document.getElementById("selectRecipe");
-    document.dropdown.appendChild(opt);
+    const dropdown = document.getElementsByClassName("recipes-dropdown-list");
+    console.log(dropdown);
+    const ddnEl = dropdown[dropdown.length-1];
+    ddnEl.appendChild(opt);
 }
 
 function selectCategory(type) {
@@ -84,3 +109,11 @@ function showRecipe(name) {
         }
     }
 }
+
+function showRecipeDdn(){
+    showRecipe(sel.value);
+}
+
+//TODO: figure out cart
+//TODO: figure out favorite
+//TODO: figure out rating

@@ -10,6 +10,7 @@
     
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="recipes.css"/>
+    <script src="favorites.js"></script>
 
     <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
@@ -28,7 +29,7 @@
         </div>
         
         <div class="welcome">
-          Welcome, User
+          Welcome, <span class="user-name"></span>
         </div>
       </div>
 
@@ -55,31 +56,31 @@
       <div class="content">
         <div class="sections">
           <div>
-            <button type="button" id="breakfast">Breakfasts</button>
+            <button type="button" id="breakfast" onclick=selectCategory(this)>Breakfasts</button>
           </div>
 
           <div>
-            <button type="button" id="lunch">Lunches</button>
+            <button type="button" id="lunch" onclick=selectCategory(this)>Lunches</button>
           </div>
 
           <div>
-            <button type="button" id="dinner">Dinners</button>
+            <button type="button" id="dinner" onclick=selectCategory(this)>Dinners</button>
           </div>
 
           <div>
-            <button type="button" id="dessert">Desserts</button>
+            <button type="button" id="dessert" onclick=selectCategory(this)>Desserts</button>
           </div>
 
           <div>
-            <button type="button" id="side">Sides</button>
+            <button type="button" id="side" onclick=selectCategory(this)>Sides</button>
           </div>
 
           <div>
-            <button type = "button" id="other">Other</button>
+            <button type = "button" id="other" onclick=selectCategory(this)>Other</button>
           </div>
 
           <div>
-            <button type="button" id="all">All</button>
+            <button type="button" id="all" onclick=selectCategory(this)>All</button>
           </div>
 
         </div>
@@ -88,10 +89,11 @@
           <div class="recp">
           <!--Replace links with link to specific recipe-->
           <!--Replace images with images from linked recipes-->
-            <a href = "allRecipes.html">Recipe 1</a>
+            <a href = "https://www.foodnetwork.com/recipes/alton-brown/french-toast-recipe-1942216">French Toast</a>
             <br />
-            <img alt="Recipe" src="https://th.bing.com/th/id/OIP.o1spqHBWB97Y375svkC4ngHaGl?pid=ImgDet&rs=1" width="200px"/>
+            <img alt="Recipe" src="https://th.bing.com/th?id=OSK.8d6071ecfcb936b04aed13baedb764fc&w=228&h=171&rs=2&qlt=80&o=6&cdv=1&dpr=1.3&pid=16.1" width="200px"/>
           </div>
+    
 
           <div class="recp">
             <a href = "allRecipes.html">Recipe 2</a>
