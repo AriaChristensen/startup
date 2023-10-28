@@ -1,4 +1,5 @@
 const userNameEl = document.querySelector('.user-name');
+console.log(userNameEl);
 userNameEl.textContent = getUserName();
 
 function getUserName() {
@@ -36,19 +37,14 @@ function addToDatabase(object){
 function addToList(obj) {
     var btn = document.createElement("button");
 
-    // Set the text of the button
     btn.textContent = obj.recipeName;
 
-    // Set the type of the button
     btn.type = "button";
 
     btn.class = "recipe-btn"
 
-    //// Add a click event listener to the button
-    //btn.addEventListener("click", function() {
-    //// Alert a message when clicked
-    //alert("Hello, world!");
-    //});
+    //update to show correct recipe
+    btn.addEventListener("onclick", showRecipe(fakeRecipe) );
 
     const list = document.getElementsByClassName("recipes");
     document.list.appendChild(btn);
@@ -61,8 +57,30 @@ function addToList(obj) {
 }
 
 function selectCategory(type) {
-    const currElement = document.getElementsByClassName(type);
-    currElement.style.width = '150%';
-    //currElement.style.text-align = 'left';
-    //currElement.style.padding-left = '30%';
+    let el = document.getElementById("breakfast");
+    el.style.width = "95%";
+    el = document.getElementById("lunch");
+    el.style.width = "95%";
+    el = document.getElementById("dinner");
+    el.style.width = '95%';
+    el = document.getElementById("dessert");
+    el.style.width = '95%';
+    el = document.getElementById("side");
+    el.style.width = '95%';
+    el = document.getElementById("other");
+    el.style.width = '95%';
+
+    type.style.width = '150%';  
+}
+
+function showRecipe(name) {
+    const els = document.getElementsByClassName("recipeList");
+    for (i = 0; i < els.length; i++){
+        el = els[i];
+        if (el.id == name.id) {
+            el.style.display = 'block';
+        } else {
+            el.style.display = 'none';
+        }
+    }
 }

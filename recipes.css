@@ -65,38 +65,38 @@ button {
     padding: 1.5em;
 }
 
-.breakfast {
+#breakfast {
     background-color: red;
     margin: .5em;
 }
 
-.lunch {
+#lunch {
     background-color: orange;
     margin: .5em;
 }
 
-.dinner {
+#dinner {
     background-color: yellow;
     margin: .5em;
 }
 
-.dessert {
+#dessert {
     background-color: green;
     margin: .5em;
 }
 
-.side {
+#side {
     background-color: blue;
     margin: .5em;
 }
 
-.newSec {
+#other {
     background-color: purple;
     margin: .5em;
 }
 
-.all {
-    background-color: purple;
+#all {
+    background-color: rgb(255, 0, 221);
     margin: .5em;
 }
 
@@ -142,11 +142,11 @@ button {
     border-radius: 5px;
 }
 
-.fakeRecipe {
+#fakeRecipe {
     display: block;
 }
 
-#new-recipe {
+#newRecipe {
     display: none;
 }
 

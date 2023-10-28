@@ -58,34 +58,34 @@
       <div class="content">
         <div class="sections">
           <div>
-            <button type="button" class="breakfast" onclick = selectCategory(breakfast)>Breakfasts</button>
+            <button type="button" id="breakfast" onclick = "selectCategory(this)">Breakfasts</button>
           </div>
 
           <div>
-            <button type="button" class="lunch" onclick = selectCategory(lunch)>Lunches</button>
+            <button type="button" id="lunch" onclick = "selectCategory(this)">Lunches</button>
           </div>
 
           <div>
-            <button type="button" class="dinner" onclick = selectCategory(dinner)>Dinners</button>
+            <button type="button" id="dinner" onclick = "selectCategory(this)">Dinners</button>
           </div>
 
           <div>
-            <button type="button" class="dessert" onclick = selectCategory(dessert)>Desserts</button>
+            <button type="button" id="dessert" onclick = "selectCategory(this)">Desserts</button>
           </div>
 
           <div>
-            <button type="button" class="side" onclick = selectCategory(side)>Sides</button>
+            <button type="button" id="side" onclick = "selectCategory(this)">Sides</button>
           </div>
 
           <div>
-            <button type="button" class="newSec" onclick = selectCategory(newSec)>+ New Section</button>
+            <button type="button" id="other" onclick = "selectCategory(this)">Other</button>
           </div>
 
         </div>
 
         <div class="recipes">
-          <button type="button" class="recipe-btn" id = "newRecipe" onclick="">+ New Recipe</button>
-          <button type="button" class="recipe-btn" id="FakeRecipe">French Toast</button>
+          <button type="button" class="recipe-btn" id = "NewRecipe" onclick=showRecipe(newRecipe)>+ New Recipe</button>
+          <button type="button" class="recipe-btn" id="FakeRecipe" onclick=showRecipe(fakeRecipe)>French Toast</button>
         </div>
 
         <div class="recipes-dropdown">
@@ -96,36 +96,38 @@
         </div>
 
         <div class="recipe">
-          <form method="get" id="new-recipe">
-            <button class="favorite"><img src="favorite.png" width="40"/></button>
-            <input type="text" id="recipeName" placeholder="Recipe Title">
-            <br />
+          <div class = recipeList id="newRecipe">
+            <form method="get">
+              <button class="favorite"><img src="favorite.png" width="40"/></button>
+              <input type="text" id="recipeName" placeholder="Recipe Title">
+              <br />
 
-            <input type="url" id="picURL" placeholder="Link to Picture">
-            <br />
-
-
-            <input type="url" id="recipeURL" placeholder="Link to Recipe">
-            <br />
+              <input type="url" id="picURL" placeholder="Link to Picture">
+              <br />
 
 
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            <h3>Rating</h3>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-            <br />
+              <input type="url" id="recipeURL" placeholder="Link to Recipe">
+              <br />
 
-            <label for="textarea"><h3>Comments: </h3></label> <br />
-            <textarea id="textarea" name="comments"></textarea>
 
-            
-            <button type = "submit" class="submit" onclick=addRecipe()>Submit</button>
-          </form>
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+              <h3>Rating</h3>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <br />
 
-          <div class="fakeRecipe">
+              <label for="textarea"><h3>Comments: </h3></label> <br />
+              <textarea id="textarea" name="comments"></textarea>
+
+              
+              <button type = "submit" class="submit" onclick=addRecipe()>Submit</button>
+            </form>
+          </div>
+
+          <div id="fakeRecipe" class="recipeList">
             <div class = "top-line">
               <p id = "title"><h1>French Toast</h1></p>
               <img src="favorite.png" width="40"/>
