@@ -11,6 +11,8 @@ button {
     overflow: hidden;
 }
 
+
+
 .content{
     display: flex;
 }
@@ -65,9 +67,6 @@ button {
 
 .breakfast {
     background-color: red;
-    width: 150%;
-    text-align: left;
-    padding-left: 30%;
     margin: .5em;
 }
 
@@ -91,7 +90,7 @@ button {
     margin: .5em;
 }
 
-.new {
+.newSec {
     background-color: purple;
     margin: .5em;
 }
@@ -102,6 +101,14 @@ button {
 }
 
 .recipe-btn {
+    background-color: #d3e8f8;
+    width: 100%;
+    color: black;
+    padding: 0;
+    margin: 0;
+}
+
+.recipe-btn:focus {
     background-color: white;
     width: 100%;
     color: black;
@@ -122,6 +129,27 @@ button {
     padding: .5em;
 }
 
+.submit {
+    color: white;
+    background-color: rgb(5, 141, 231);
+    border: none;
+    padding: 1em 1em;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    width: 6em;
+    border-radius: 5px;
+}
+
+.fakeRecipe {
+    display: block;
+}
+
+#new-recipe {
+    display: none;
+}
+
 @media (orientation: portrait) {
     .content {
         flex-direction: column;
@@ -133,7 +161,7 @@ button {
         overflow-y: auto;
     }
 
-    .breakfast {
+    button:focus {
         border: thick white solid;
         color: white;
         padding: 1em 1em;

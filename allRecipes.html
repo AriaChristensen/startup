@@ -7,6 +7,7 @@
     <title>All Recipes</title>
     <!-- update icon-->
     <link rel="icon" href="cutlery.png" />
+    <script src="allRecipes.js"></script>
 
     <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
@@ -30,7 +31,7 @@
         </div>
         
         <div class="welcome">
-          Welcome, User
+          Welcome, <span class="user-name"></span>
         </div>
       </div>
 
@@ -57,44 +58,45 @@
       <div class="content">
         <div class="sections">
           <div>
-            <button type="button" class="breakfast">Breakfasts</button>
+            <button type="button" class="breakfast" onclick = selectCategory(breakfast)>Breakfasts</button>
           </div>
 
           <div>
-            <button type="button" class="lunch">Lunches</button>
+            <button type="button" class="lunch" onclick = selectCategory(lunch)>Lunches</button>
           </div>
 
           <div>
-            <button type="button" class="dinner">Dinners</button>
+            <button type="button" class="dinner" onclick = selectCategory(dinner)>Dinners</button>
           </div>
 
           <div>
-            <button type="button" class="dessert">Desserts</button>
+            <button type="button" class="dessert" onclick = selectCategory(dessert)>Desserts</button>
           </div>
 
           <div>
-            <button type="button" class="side">Sides</button>
+            <button type="button" class="side" onclick = selectCategory(side)>Sides</button>
           </div>
 
           <div>
-            <button type="button" class="new">+ New Section</button>
+            <button type="button" class="newSec" onclick = selectCategory(newSec)>+ New Section</button>
           </div>
 
         </div>
 
         <div class="recipes">
-          <button type="button" class="recipe-btn">+ New Recipe</button>
+          <button type="button" class="recipe-btn" id = "newRecipe" onclick="">+ New Recipe</button>
+          <button type="button" class="recipe-btn" id="FakeRecipe">French Toast</button>
         </div>
 
         <div class="recipes-dropdown">
           <select id="selectRecipe" name="recipeChoice">
             <option>+ New Recipe</option>
-            <option>Option</option>
+            <option>French Toast</option>
           </select>
         </div>
 
         <div class="recipe">
-          <form method="get">
+          <form method="get" id="new-recipe">
             <button class="favorite"><img src="favorite.png" width="40"/></button>
             <input type="text" id="recipeName" placeholder="Recipe Title">
             <br />
@@ -118,7 +120,39 @@
 
             <label for="textarea"><h3>Comments: </h3></label> <br />
             <textarea id="textarea" name="comments"></textarea>
+
+            
+            <button type = "submit" class="submit" onclick=addRecipe()>Submit</button>
           </form>
+
+          <div class="fakeRecipe">
+            <div class = "top-line">
+              <p id = "title"><h1>French Toast</h1></p>
+              <img src="favorite.png" width="40"/>
+            </div>
+            <div id = "pic">
+              <img alt = "Recipe" src = "https://th.bing.com/th?id=OSK.8d6071ecfcb936b04aed13baedb764fc&w=228&h=171&rs=2&qlt=80&o=6&cdv=1&dpr=1.3&pid=16.1" width = "400 px" />
+            </div id = "url">
+            <div>
+              <p> <a href = "https://www.foodnetwork.com/recipes/alton-brown/french-toast-recipe-1942216"><h3>Link to Recipe</h3></a></p>
+            </div>
+            <div id  = "rating">
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+              <h3>Rating</h3>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            <div id = "comments">
+              <p>
+                <h3>Comments</h3>
+                Great recipe!! Try adding cinnamon and coconut into the egg mixture as well.
+              </p>
+            </div>
+          </div>
+          
         </div>
 
         <div class="ingredients">
