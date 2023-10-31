@@ -35,9 +35,57 @@ CSS is used to style webpages and can do easy animations.
 Here is a link to my CodePen with some basic CSS commands: https://codepen.io/Aria-Christensen/pen/abPPpbV
 
 ### Flex 
-*
-*
-*
+* ![image](https://github.com/AriaChristensen/startup/assets/145092000/8571fa04-3310-4609-bc6f-449e60c7405f)
+
+## JavaScript
+
+Javascript manages the code of the website. It is what makes things do what they do.
+
+### Promise Statements
+
+Promise statements can be pending, fulfilled, or rejected.
+
+Traditional promise:
+  ```
+  const coinToss = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (Math.random() > 0.5) {
+        resolve('success');
+      } else {
+        reject('error');
+      }
+    }, 10000);
+  });
+  ```
+
+Or you can use then, try, catch statements to make it run in the order you want.
+  ```
+  coinToss
+    .then((result) => console.log(`Coin toss result: ${result}`))
+    .catch((err) => console.log(`Error: ${err}`))
+    .finally(() => console.log('Toss completed'));
+  ```
+
+Or you can use async/await:
+  ```
+  try {
+    const result = await coinToss();
+    console.log(`Toss result ${result}`);
+  } catch (err) {
+    console.error(`Error: ${err}`);
+  } finally {
+    console.log(`Toss completed`);
+  }
+  ```
+
+Another example:
+  ```
+  const httpResponse = await fetch('https://simon.cs260.click/api/user/me');
+  const jsonResponse = await httpResponse.json();
+  console.log(jsonResponse));
+  console.log('done');
+
+  ```
 
 
 ## Midterm Study Guide
