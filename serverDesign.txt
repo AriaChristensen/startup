@@ -1,1 +1,6 @@
-ShareRecipe
+shareRecipe -> POST /share
+addRecipe -> POST /allRecipes
+addToCart -> PUT /cart
+removeFromCart -> DELETE /cart
+login -> POST /home
+logout -> DELETE /home

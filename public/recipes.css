@@ -11,7 +11,15 @@ button {
     overflow: hidden;
 }
 
-
+.add {
+    border: none;
+    background-color: rgb(159, 163, 167);
+    color: black;
+    padding: 0%;
+    margin: 0%;
+    width: 1.5em;
+    border-radius: 20%;
+}
 
 .content{
     display: flex;
@@ -60,7 +68,7 @@ button {
 
 .ingredients{
     display: block;
-    width: 15%;
+    width: 100%;
     background-color: rgb(211, 216, 221);
     padding: 1.5em;
 }

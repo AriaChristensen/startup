@@ -115,6 +115,10 @@ function showRecipeDdn(){
     showRecipe(sel.value);
 }
 
+function addIngredient(){
+    // add ingredient to cart
+}
+
 //TODO: figure out cart
 //TODO: figure out favorite
 //TODO: figure out rating
