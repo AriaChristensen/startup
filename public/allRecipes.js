@@ -23,7 +23,9 @@ const testRecipe = {
     picURL: "https://th.bing.com/th?id=OSK.8d6071ecfcb936b04aed13baedb764fc&w=228&h=171&rs=2&qlt=80&o=6&cdv=1&dpr=1.3&pid=16.1",
     linkURL: "https://www.foodnetwork.com/recipes/alton-brown/french-toast-recipe-1942216",
     rating: 4,
-    comments: "Great recipe!! Try adding cinnamon and coconut into the egg mixture as well."
+    comments: "Great recipe!! Try adding cinnamon and coconut into the egg mixture as well.",
+    section: "Breakfast",
+    shared: "false"
 };
 
 function addRecipe() {

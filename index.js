@@ -20,6 +20,13 @@ apiRouter.post('/cart', (req, res) => {
   res.send(cart);
 });
 
+// Remove From cart
+apiRouter.delete('/cart', (req, res) => {
+  cart = removeCart(req.body, cart);
+  res.send(cart);
+});
+
+
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
   res.sendFile('index.html', { root: 'public' });
@@ -45,4 +52,9 @@ function updateCart(newItem, cart) {
   }
 
   return cart;
+}
+
+function removeCart(newItem, cart) {
+    cart.delete(newItem);  
+    return cart;
 }
