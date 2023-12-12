@@ -95,7 +95,8 @@ function selectCategory(type) {
     el = document.getElementById("other");
     el.style.width = '95%';
 
-    type.style.width = '150%';  
+    type.style.width = '150%'; 
+    // load database 
 }
 
 function showRecipe(name) {

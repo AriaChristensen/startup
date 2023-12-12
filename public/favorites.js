@@ -32,24 +32,6 @@ function selectCategory(type) {
     type.style.width = '150%';  
 }
 
-/*
-function showRecipe(name) {
-    const els = document.getElementsByClassName("recipeList");
-    for (i = 0; i < els.length; i++){
-        el = els[i];
-        if (el.id == name.id) {
-            el.style.display = 'block';
-        } else {
-            el.style.display = 'none';
-        }
-    }
+function displayRecipes(){
+    //get recipes from database and display
 }
-
-function showRecipeDdn(){
-    showRecipe(sel.value);
-}
-
-//TODO: figure out cart
-//TODO: figure out favorite
-//TODO: figure out rating
-*/
