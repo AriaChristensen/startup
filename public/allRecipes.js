@@ -112,6 +112,8 @@ async function loadRecipes() {
         });
 
         const allRecipes = await response.json();
+        console.log("all recipes");
+        console.log(allRecipes);
 
 
         // create button list

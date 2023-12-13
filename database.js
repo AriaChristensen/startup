@@ -17,34 +17,17 @@ const cart = db.collection('ingredient');
 });
 
 async function addRecipe(recipe) {
+  console.log("inserting recipe to database");
   const result = await recipes.insertOne(recipe);
-  return result;
-}
-
-async function addToCart(indredient) {
-  const result = await cart.insertOne(ingredient);
-  return result;
-}
-
-async function removeFromCart(ingredient) {
-  const result = await cart.deleteOne(ingredient);
+  console.log(recipes.find());
   return result;
 }
 
 async function getRecipes() {
+  console.log("retrieving recipes from database");
   const result = await recipes.find();
-  return result;
-}
-async function getRecipes(category) {
-  const query = { section: category};
-  const result = await recipes.find(query);
-  return result;
-}
-
-async function favorites() {
-  const query = { favorite: 'true' };
-  const result = await recipes.find(query);
-  return result;
+  const cursor = recipes.find();
+  return cursor.toArray();
 }
 
 async function shared() {
@@ -53,5 +36,5 @@ async function shared() {
   return result;
 }
 
-module.exports = { addRecipe, addToCart, removeFromCart, getRecipes, favorites, shared };
+module.exports = { addRecipe, getRecipes, shared };
 

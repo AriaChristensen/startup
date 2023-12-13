@@ -18,18 +18,20 @@ app.use(`/api`, apiRouter);
 // add Recipe
 apiRouter.post('/recipe', async (req, res) => {
     console.log("adding recipe ...");
-    updateRecipes(req.body, recipes);
-    res.send(recipes);
-    //DB.addRecipe(req.body);
-    //const all = await DB.getRecipes();
-    //res.send(all);
+    //updateRecipes(req.body, recipes);
+    //res.send(recipes);
+    DB.addRecipe(req.body);
+    const all = await DB.getRecipes();
+    res.send(all);
 
 });
 
 // get Recipes
 apiRouter.get('/recipe', async (req, res) => {
     console.log("sending recipes ...")
-    res.send(recipes);
+    const all = await DB.getRecipes();
+    res.send(all);
+    //res.send(recipes);
 });
 
 // Return the application's default page if the path is unknown
