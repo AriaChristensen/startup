@@ -15,30 +15,22 @@ app.use(express.static('public'));
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
-// Add to cart
-apiRouter.post('/cart', (req, res) => {
-  cart = updateCart(req.body, cart);
-  res.send(cart);
-});
-
-// Remove From cart
-apiRouter.delete('/cart', (req, res) => {
-  cart = removeCart(req.body, cart);
-  res.send(cart);
-});
-
-// Get Cart
-apiRouter.get('/cart',(req, res) => {
-    res.send(cart);
-})
-
+// add Recipe
 apiRouter.post('/recipe', async (req, res) => {
     console.log("adding recipe ...");
+    updateRecipes(req.body, recipes);
+    res.send(recipes);
     //DB.addRecipe(req.body);
     //const all = await DB.getRecipes();
     //res.send(all);
+
 });
 
+// get Recipes
+apiRouter.get('/recipe', async (req, res) => {
+    console.log("sending recipes ...")
+    res.send(recipes);
+});
 
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
@@ -49,25 +41,22 @@ app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
 
-// updateCart adds a new ingredient to the cart
-let cart = [];
-function updateCart(newItem, cart) {
+
+let recipes = [];
+function updateRecipes(newItem, data) {
   let found = false;
-  for (let i = 0; i < cart.length; i++) {
-    if (cart[i] == newItem) {
+  for (let i = 0; i < data.length; i++) {
+    if (data[i] == newItem) {
       found = true;
       break;
     }
   }
 
   if (!found) {
-    cart.push(newItem);
+    data.push(newItem);
   }
 
-  return cart;
+  return data;
 }
 
-function removeCart(newItem, cart) {
-    cart.delete(newItem);  
-    return cart;
-}
+

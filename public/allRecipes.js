@@ -3,6 +3,7 @@ class Page {
         const userNameEl = document.querySelector('.user-name');
         //console.log(userNameEl); // this is returning null?
        // userNameEl.textContent = this.getUserName();
+       var currentRecipes = loadRecipes();
     }
 
     getUserName() {
@@ -44,16 +45,14 @@ function addRecipe() {
     const form = document.getElementById("new-recipe");
     const formData = new FormData(form);
     const obj = {};
-    
-    
+        
 
     for (let [key, value] of formData.entries()) { 
         formData.forEach((value, key) => (obj[key] = value));
     }
     
-    console.log(JSON.stringify(obj));
     addToDatabase(obj);
-    addToList(obj);
+    loadRecipes();
 }
 
 async function addToDatabase(object){
@@ -64,63 +63,10 @@ async function addToDatabase(object){
           body: JSON.stringify(object),
         });
   
-        const allRecipes = await response.json();
-        console.log(JSON.stringify(allRecipes));
+        console.log("added recipe to database");
       } catch {
         console.log("Error adding to database");
       }
-}
-
-function addToList(obj) {
-    var btn = document.createElement("button");
-
-    btn.textContent = obj.recipeName;
-
-    btn.type = "button";
-
-    btn.className = "recipe-btn"
-
-    //update to show correct recipe
-    btn.addEventListener("click", function() {
-        showRecipe(testRecipe2);
-    }, false);
-
-    const list = document.getElementsByClassName("recipe-btn");
-    const el=list[list.length-1];
-    
-    el.appendChild(btn);
-
-
-    var opt = document.createElement("option");
-    opt.textContent = obj.recipeName;
-    //update to show correct recipe
-    opt.addEventListener("click", function() {
-        showRecipe(obj);
-    }, false);
-    //FIXME: get onclick function working
-
-    const dropdown = document.getElementsByClassName("recipes-dropdown-list");
-    //console.log(dropdown);
-    const ddnEl = dropdown[dropdown.length-1];
-    ddnEl.appendChild(opt);
-}
-
-function selectCategory(type) {
-    let el = document.getElementById("breakfast");
-    el.style.width = "95%";
-    el = document.getElementById("lunch");
-    el.style.width = "95%";
-    el = document.getElementById("dinner");
-    el.style.width = '95%';
-    el = document.getElementById("dessert");
-    el.style.width = '95%';
-    el = document.getElementById("side");
-    el.style.width = '95%';
-    el = document.getElementById("other");
-    el.style.width = '95%';
-
-    type.style.width = '150%'; 
-    // load database 
 }
 
 function showRecipe(obj) {
@@ -142,10 +88,8 @@ function showRecipe(obj) {
     if (name == fakeRecipe) {
 
         const rcpName = document.getElementById("title");
-        const rcpFav = document.getElementById("heart");
         const rcpPic = document.getElementById("pic");
         const rcpLink = document.getElementById("url");
-        const rcpRating = document.getElementById("rating");
         const rcpComments = document.getElementById("comments");
 
         rcpName.innerHTML = obj.recipeName;
@@ -159,10 +103,75 @@ function showRecipeDdn(){
     showRecipe(sel.value);
 }
 
-function addIngredient(){
-    // add ingredient to cart
-}
+async function loadRecipes() {
+    try {
+        // get recipes from database
+        const response = await fetch('/api/recipe', {
+            method: 'GET',
+            headers: {'content-type': 'application/json'},
+        });
 
-//TODO: figure out cart
-//TODO: figure out favorite
-//TODO: figure out rating
+        const allRecipes = await response.json();
+
+
+        // create button list
+        let newRecipes = [];
+        const list = document.getElementsByClassName("recipe-btn");
+        let names = []
+        let numChars = 0;
+        for (let m = list.length - 1; m > 0; m--) {
+            let name = list[m].innerText;
+            names.push(name.substring(0,name.length-numChars));
+            numChars = name.length;
+        }
+
+        // find buttons that need to be added
+        for (let i = 0; i < allRecipes.length; i++) {
+            let found = false;
+            for (let j = 0; j < names.length; j++) {
+                if (allRecipes[i].recipeName === names[j]) {
+                    found = true;
+                }
+            }
+            if (!found) {
+                newRecipes.push(allRecipes[i]);
+            }
+        }
+
+        // add buttons
+        for (let k = 0; k < newRecipes.length; k++) {
+            var btn = document.createElement("button");
+
+            btn.textContent = newRecipes[k].recipeName;
+
+            btn.type = "button";
+
+            btn.className = "recipe-btn"
+
+            //update to show correct recipe
+            btn.addEventListener("click", function() {
+                showRecipe(newRecipes[k]);
+            }, false);
+
+            const el=list[list.length-1];
+            
+            el.appendChild(btn);
+
+
+            var opt = document.createElement("option");
+            opt.textContent = newRecipes[k].recipeName;
+            //update to show correct recipe
+            opt.addEventListener("click", function() {
+                showRecipe(newRecipes[k]);
+            }, false);
+            //FIXME: get onclick function working
+
+            const dropdown = document.getElementsByClassName("recipes-dropdown-list");
+            const ddnEl = dropdown[dropdown.length-1];
+            ddnEl.appendChild(opt);
+        }
+
+    } catch {
+        console.log("Error getting recipes from database");
+    }
+}
