@@ -44,3 +44,6 @@ both desktop and mobile screen sizes. The buttons will link to appropriate pages
 [Recipes](https://github.com/AriaChristensen/startup/recipes.css)
 
 [Cart](https://github.com/AriaChristensen/startup/cart.css)
+
+## Deliverable 4
+For this deliverable, I simplified the webpage so that only the necessary requirements are met. When a recipe is added from the All Recipes tab, it calls a service that adds the recipe to a list in the backend. It then calls another service that gets all the recipes from the list and updates the recipe list buttons on the left side to include the new recipe. The login page also displays a quote that is obtained from a third party service endpoint.
