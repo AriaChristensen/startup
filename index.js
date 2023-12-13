@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const DB = require('./database.js');
 
 // The service port. In production the front-end code is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
@@ -24,6 +25,13 @@ apiRouter.post('/cart', (req, res) => {
 apiRouter.delete('/cart', (req, res) => {
   cart = removeCart(req.body, cart);
   res.send(cart);
+});
+
+// SubmitScore
+apiRouter.post('/recipe', async (req, res) => {
+    DB.addRecipe(req.body);
+    const all = await DB.getRecipes();
+    res.send(all);
 });
 
 

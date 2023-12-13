@@ -31,6 +31,10 @@ async function removeFromCart(ingredient) {
   return result;
 }
 
+async function getRecipes() {
+  const result = await recipes.find();
+  return result;
+}
 async function getRecipes(category) {
   const query = { section: category};
   const result = await recipes.find(query);
