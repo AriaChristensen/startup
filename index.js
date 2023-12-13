@@ -27,11 +27,16 @@ apiRouter.delete('/cart', (req, res) => {
   res.send(cart);
 });
 
-// SubmitScore
+// Get Cart
+apiRouter.get('/cart',(req, res) => {
+    res.send(cart);
+})
+
 apiRouter.post('/recipe', async (req, res) => {
-    DB.addRecipe(req.body);
-    const all = await DB.getRecipes();
-    res.send(all);
+    console.log("adding recipe ...");
+    //DB.addRecipe(req.body);
+    //const all = await DB.getRecipes();
+    //res.send(all);
 });
 
 
