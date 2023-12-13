@@ -1,9 +1,12 @@
 class Page {
     constructor() {
-        const userNameEl = document.querySelector('.user-name');
-        //console.log(userNameEl); // this is returning null?
-       // userNameEl.textContent = this.getUserName();
-       var currentRecipes = loadRecipes();
+        const userNameEl = localStorage.getItem('userName') ?? 'Mystery player';
+        const curUser = document.getElementById("userPlaceholder");
+        curUser.innerText = userNameEl;
+        console.log("user name: ");
+        console.log(userNameEl);
+        // FIXME, get username displaying properly
+        var currentRecipes = loadRecipes();
     }
 
     getUserName() {
@@ -70,6 +73,7 @@ async function addToDatabase(object){
 }
 
 function showRecipe(obj) {
+    console.log(obj);
 
     const els = document.getElementsByClassName("recipeList");
     let name = fakeRecipe;
@@ -142,7 +146,7 @@ async function loadRecipes() {
 
         // add buttons
         for (let k = 0; k < newRecipes.length; k++) {
-            var btn = document.createElement("button");
+            let btn = document.createElement("button");
 
             btn.textContent = newRecipes[k].recipeName;
 
@@ -155,9 +159,9 @@ async function loadRecipes() {
                 showRecipe(newRecipes[k]);
             }, false);
 
-            const el=list[list.length-1];
+            const els = document.getElementById("recipes");
             
-            el.appendChild(btn);
+            els.appendChild(btn);
 
 
             var opt = document.createElement("option");

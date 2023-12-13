@@ -7,7 +7,6 @@
     <title>All Recipes</title>
     <!-- update icon-->
     <link rel="icon" href="cutlery.png" />
-    <script src="allRecipes.js"></script>
 
     <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
@@ -31,7 +30,7 @@
         </div>
         
         <div class="welcome">
-          Welcome, <span class="user-name"></span>
+          Welcome, <span class="user-name" id = "userPlaceholder"></span>
         </div>
       </div>
 
@@ -51,7 +50,7 @@
     <main>
       <div class="content">
         
-        <div class="recipes">
+        <div id="recipes">
           <button type="button" class="recipe-btn" onclick=showRecipe(newRecipe)>+ New Recipe</button>
           <button type="button" class="recipe-btn" onclick=showRecipe(testRecipe)>French Toast</button>
         </div>
@@ -116,5 +115,7 @@
       <!-- fix url -->
       <a href="https://github.com/AriaChristensen/startup/tree/simple">GitHub</a>
     </footer>
+    
+    <script src="allRecipes.js"></script>
   </body>
 </html>

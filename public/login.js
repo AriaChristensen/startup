@@ -41,7 +41,7 @@
     }
   }
   
-  function play() {
+  function cont() {
     window.location.href = 'allRecipes.html';
   }
   

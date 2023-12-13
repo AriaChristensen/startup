@@ -42,14 +42,11 @@ async function createUser(email, password) {
 
 
 async function addRecipe(recipe) {
-  console.log("inserting recipe to database");
   const result = await recipes.insertOne(recipe);
-  console.log(recipes.find());
   return result;
 }
 
 async function getRecipes() {
-  console.log("retrieving recipes from database");
   const result = await recipes.find();
   const cursor = recipes.find();
   return cursor.toArray();
