@@ -68,6 +68,19 @@ footer a{
     text-align: center;
 }
 
+.quoteBox {
+    flex: 1;
+    display: block;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: gray;
+    color: white;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
 @media (orientation: portrait) {
     main {
       flex-direction: column;
