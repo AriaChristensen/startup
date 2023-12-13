@@ -66,6 +66,8 @@ footer a{
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
 }
 
 .quoteBox {
