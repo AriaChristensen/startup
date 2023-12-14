@@ -20,7 +20,7 @@ This website will enable people to save URL's to other websites and organize the
 
 ![image](https://github.com/AriaChristensen/startup/assets/145092000/1dec23a5-4f0d-4d53-8a62-79126648258a)
 
-## Deliverable 1
+## Deliverable 1 (HTML)
 
 This is basic html code for each page of the website. 
 
@@ -34,7 +34,7 @@ This is basic html code for each page of the website.
 
 [Cart](https://github.com/AriaChristensen/startup/cart.html)
 
-## Deliverable 2
+## Deliverable 2 (CSS)
 
 This is the code for each page of the website with CSS styling added. The website should be responsive to 
 both desktop and mobile screen sizes. The buttons will link to appropriate pages once Javascript is added.
@@ -45,5 +45,31 @@ both desktop and mobile screen sizes. The buttons will link to appropriate pages
 
 [Cart](https://github.com/AriaChristensen/startup/cart.css)
 
-## Deliverable 4
-For this deliverable, I simplified the webpage so that only the necessary requirements are met. When a recipe is added from the All Recipes tab, it calls a service that adds the recipe to a list in the backend. It then calls another service that gets all the recipes from the list and updates the recipe list buttons on the left side to include the new recipe. The login page also displays a quote that is obtained from a third party service endpoint.
+## Deliverable 3 (JavaScript)
+
+This deliverable implemented methods to switch between tabs and to add new recipes. Currently the recipes
+are all showing the same thing, but that will be updated later when they are being pulled from the
+database. It is responsive as well.
+
+## Deliverable 4 (Services)
+
+For this deliverable, I simplified the webpage so that only the necessary requirements are met. When a 
+recipe is added from the All Recipes tab, it calls a service that adds the recipe to a list in the backend. 
+It then calls another service that gets all the recipes from the list and updates the recipe list buttons 
+on the left side to include the new recipe. The login page also displays a quote that is obtained from a 
+third party service endpoint.
+
+## Deliverable 5 (Database)
+
+The functionality for this one is the same as for deliverable 4, but now it is drawing from an actual 
+database instead of an array stored in the backend. Now if you reload the recipes, they will all show
+up instead of starting over.
+
+## Deliverable 6 (Login)
+
+Users can now log into the system. The username is displayed in the top right corner of the recipes page
+and they can only log in if they have already created an account. The passwords are encrypted just like
+in Simon and it uses cookies to pass information between the client and server. If the website seems to be
+behaving strangely, try logging out and logging back in. Sometimes it thinks it has stored your
+information when you first open the page even though it hasn't. You can also try refreshing the page if
+there seem to be an unusually large number of recipes.
