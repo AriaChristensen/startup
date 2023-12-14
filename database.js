@@ -8,6 +8,7 @@ const client = new MongoClient(url);
 const db = client.db('startup');
 const userCollection = db.collection('user');
 const recipes = db.collection('recipe');
+const sharedRecipes = db.collection('recipe');
 
 // This will asynchronously test the connection and exit the process if it fails
 (async function testConnection() {
@@ -52,11 +53,41 @@ async function getRecipes() {
   return cursor.toArray();
 }
 
-async function shared() {
-  const query = { shared: 'true' };
-  const result = await recipes.find(query);
+async function deleteRecipe(url) {
+  console.log("recipe is being deleted");
+  console.log(url);
+  console.log(recipes.find({linkURL: url}).toArray);
+  const result = await recipes.deleteOne({linkURL: url});
   return result;
 }
 
-module.exports = { addRecipe, getRecipes, shared, getUser, getUserByToken, createUser };
+async function getShared() {
+  const result = await sharedRecipes.find();
+  const cursor = sharedRecipes.find();
+  return cursor.toArray();
+}
+
+async function shareRecipe(recipe) {
+  console.log("recipe is being shared");
+  const result = await sharedRecipes.insertOne(recipe);
+  const cursor = sharedRecipes.find();
+  return cursor.toArray();
+}
+
+async function deleteShared(url) {
+  console.log("recipe is being deleted");
+  const result = await sharedRecipes.deleteOne({linkURL: url});
+  return result;
+}
+
+module.exports = {  addRecipe, 
+                    getRecipes, 
+                    getUser, 
+                    getUserByToken, 
+                    createUser, 
+                    deleteRecipe, 
+                    getShared, 
+                    shareRecipe, 
+                    deleteShared 
+                  };
 

@@ -76,9 +76,6 @@
 
               <label for="textarea"><h3>Comments: </h3></label> <br />
               <textarea id="textarea" name="comments"></textarea> <br />
-
-              <label for="textarea"><h3>Ingredients: </h3> enter each ingredient on a new line</label> <br />
-              <textarea id="ingredients" name="Ingredients"></textarea>
               
               <button type = "button" class="submit" onclick=addRecipe()>Submit</button>
             </form>
@@ -101,6 +98,10 @@
               <p id = "comments">
                 Great recipe!! Try adding cinnamon and coconut into the egg mixture as well.
               </p>
+            </div>
+            <div>
+              <button type = "button" id="delete" class = "submit" onclick=deleteRecipe(testRecipe.linkURL)>Delete</button>
+              <button type = "button" id="share" class = "submit" onclick=shareRecipe(testRecipe)>Share</button>
             </div>
           </div>
           

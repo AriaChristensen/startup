@@ -89,8 +89,6 @@ apiRouter.post('/auth/create', async (req, res) => {
 
 // add Recipe
 apiRouter.post('/recipe', async (req, res) => {
-    //updateRecipes(req.body, recipes);
-    //res.send(recipes);
     DB.addRecipe(req.body);
     const all = await DB.getRecipes();
     res.send(all);
@@ -101,7 +99,38 @@ apiRouter.post('/recipe', async (req, res) => {
 apiRouter.get('/recipe', async (req, res) => {
     const all = await DB.getRecipes();
     res.send(all);
-    //res.send(recipes);
+});
+
+// delete Recipe
+apiRouter.delete('/recipe', async (req, res) => {
+    console.log("deleting recipe");
+    DB.deleteRecipe(req.body);
+    const all = await DB.getRecipes();
+    res.send(all);
+});
+
+// share Recipe
+apiRouter.post('/shared', async (req, res) => {
+    console.log("sharing recipe");
+    DB.shareRecipe(req.body);
+    const shared = await DB.getShared();
+    console.log(shared);
+    res.send(shared);
+
+});
+
+// get Shared Recipes
+apiRouter.get('/shared', async (req, res) => {
+    const shared = await DB.getShared();
+    res.send(shared);
+});
+
+// delete Shared Recipe
+apiRouter.delete('/shared', async (req, res) => {
+    console.log("deleting shared recipe");
+    DB.deleteShared(req.body);
+    const shared = await DB.getShared();
+    res.send(shared);
 });
 
 // Default error handler

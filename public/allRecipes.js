@@ -73,7 +73,6 @@ async function addToDatabase(object){
 }
 
 function showRecipe(obj) {
-    console.log(obj);
 
     const els = document.getElementsByClassName("recipeList");
     let name = fakeRecipe;
@@ -95,16 +94,53 @@ function showRecipe(obj) {
         const rcpPic = document.getElementById("pic");
         const rcpLink = document.getElementById("url");
         const rcpComments = document.getElementById("comments");
+        const delBtn = document.getElementById("delete");
+        const shareBtn = document.getElementById("share");
 
         rcpName.innerHTML = obj.recipeName;
         rcpPic.src = obj.picURL;
-        rcpLink.href = obj.linkURL;
+        rcpLink.href = "\"" + obj.linkURL + "\"";
         rcpComments.innerHTML = obj.comments;
+        delBtn.setAttribute( "onClick", "deleteRecipe(\"" + obj.linkURL + "\")" );
+        shareBtn.setAttribute("onClick","shareRecipe(" + JSON.stringify(obj) + ")");
     }
 }
 
 function showRecipeDdn(){
     showRecipe(sel.value);
+}
+
+async function deleteRecipe(url){
+    console.log("deleting recipe");
+    console.log(url);
+    try {
+        const response = await fetch('/api/recipe', {
+          method: 'DELETE',
+          headers: {'content-type': 'application/json'},
+          body: url,
+        });
+  
+        console.log("deleted recipe from database");
+      } catch {
+        console.log("Error adding to database");
+      }
+
+}
+
+async function shareRecipe(object){
+    console.log("sharing recipe");
+    console.log(object);
+    try {
+        const response = await fetch('/api/shared', {
+          method: 'POST',
+          headers: {'content-type': 'application/json'},
+          body: url,
+        });
+  
+        console.log("shared recipe");
+      } catch {
+        console.log("Error adding to database");
+      }
 }
 
 async function loadRecipes() {
