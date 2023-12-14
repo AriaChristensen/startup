@@ -27,26 +27,42 @@ function configureWebSocket() {
     this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
     console.log(this.socket);
     this.socket.onopen = (event) => {
-      this.displayMsg('system', 'You', 'are hungry and ready to make good food.');
+      this.displaySelf('system', 'You', 'are hungry and ready to make good food.');
+      this.broadcastEvent(username, login, "is hungry and ready to make good food");
     };
     this.socket.onclose = (event) => {
-      this.displayMsg('system', 'You', 'are done cooking and ready to eat!');
+      this.displaySelf('system', 'You', 'are done cooking and ready to eat!');
+      this.broadcastEvent(username, logout, "is done cooking and ready to make good food!");
     };
     this.socket.onmessage = async (event) => {
       const msg = JSON.parse(await event.data.text());
       if (msg.type === share) {
-        this.displayMsg('player', msg.from, `shared ${msg.value.recipeName}`);
+        this.displayMsg('player', msg.from, `${msg.value.recipeName}`, `${msg.value.linkURL}`);
       } else if (msg.type === login) {
-        this.displayMsg('player', msg.from, `started cooking`);
+        this.displayNotice('player', msg.from, `started cooking`);
+      } else if (msg.type === logout) {
+        this.displayNotice('player', msg.from, ` just sat down to eat`);
       }
     };
     return this.socket;
 }
 
-function displayMsg(cls, from, msg) {
+function displayMsg(cls, from, msg, link) {
     const chatText = document.getElementById("notice");
     chatText.innerHTML =
-      `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+      `<div class="event"><span class="${cls}-event">♦${from} shared </span> <a href = "${link}">${msg}</a> </div>` + chatText.innerHTML;
+}
+
+function displaySelf(cls, from, msg, link) {
+    const chatText = document.getElementById("notice");
+    chatText.innerHTML =
+      `<div class="event"><span class="${cls}-event">♦${from} </span> ${msg} </div>` + chatText.innerHTML;
+}
+
+function displayNotice(cls, from, msg) {
+    const chatText = document.getElementById("notice");
+    chatText.innerHTML =
+      `<div class="event"><span class="${cls}-event">♦${from}</span> ${msg} </div>` + chatText.innerHTML;
 }
 
 function broadcastEvent(from, type, value) {
@@ -139,14 +155,14 @@ function showRecipe(obj) {
         const rcpPic = document.getElementById("pic");
         const rcpLink = document.getElementById("url");
         const rcpComments = document.getElementById("comments");
-        const delBtn = document.getElementById("delete");
+        //const delBtn = document.getElementById("delete");
         const shareBtn = document.getElementById("share");
 
         rcpName.innerHTML = obj.recipeName;
         rcpPic.src = obj.picURL;
         rcpLink.href = "\"" + obj.linkURL + "\"";
         rcpComments.innerHTML = obj.comments;
-        delBtn.setAttribute( "onClick", "deleteRecipe(\"" + obj.linkURL + "\")" );
+        //delBtn.setAttribute( "onClick", "deleteRecipe(\"" + obj.linkURL + "\")" );
         shareBtn.setAttribute("onClick","shareRecipe(" + JSON.stringify(obj) + ")");
     }
 }
