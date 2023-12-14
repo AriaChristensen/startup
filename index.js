@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const express = require('express');
 const app = express();
 const DB = require('./database.js');
+const { peerProxy } = require('./peerProxy.js');
 
 
 const authCookieName = 'token';
@@ -112,10 +113,10 @@ apiRouter.delete('/recipe', async (req, res) => {
 // share Recipe
 apiRouter.post('/shared', async (req, res) => {
     console.log("sharing recipe");
-    DB.shareRecipe(req.body);
-    const shared = await DB.getShared();
-    console.log(shared);
-    res.send(shared);
+    //DB.shareRecipe(req.body);
+    //const shared = await DB.getShared();
+    //console.log(shared);
+    //res.send(shared);
 
 });
 
@@ -152,9 +153,12 @@ function setAuthCookie(res, authToken) {
     });
   }
 
-app.listen(port, () => {
+
+const httpService = app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+peerProxy(httpService);
 
 
 let recipes = [];

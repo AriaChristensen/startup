@@ -1,21 +1,66 @@
+// Event messages
+const login = 'login';
+const logout = 'logout';
+const share = 'share';
+
 class Page {
     constructor() {
-        const userNameEl = localStorage.getItem('userName') ?? 'Mystery player';
+        const userNameEl = localStorage.getItem('userName') ?? 'User';
         const curUser = document.getElementById("userPlaceholder");
         curUser.innerText = userNameEl;
         console.log("user name: ");
         console.log(userNameEl);
         // FIXME, get username displaying properly
         var currentRecipes = loadRecipes();
+
+        //this.configureWebSocket();
     }
 
     getUserName() {
         return localStorage.getItem('userName') ?? 'Mystery user';
     }
+
+}
+
+function configureWebSocket() {
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    console.log(this.socket);
+    this.socket.onopen = (event) => {
+      this.displayMsg('system', 'You', 'are hungry and ready to make good food.');
+    };
+    this.socket.onclose = (event) => {
+      this.displayMsg('system', 'You', 'are done cooking and ready to eat!');
+    };
+    this.socket.onmessage = async (event) => {
+      const msg = JSON.parse(await event.data.text());
+      if (msg.type === share) {
+        this.displayMsg('player', msg.from, `shared ${msg.value.recipeName}`);
+      } else if (msg.type === login) {
+        this.displayMsg('player', msg.from, `started cooking`);
+      }
+    };
+    return this.socket;
+}
+
+function displayMsg(cls, from, msg) {
+    const chatText = document.getElementById("notice");
+    chatText.innerHTML =
+      `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+}
+
+function broadcastEvent(from, type, value) {
+    const event = {
+      from: from,
+      type: type,
+      value: value,
+    };
+    this.socket.send(JSON.stringify(event));
 }
 
 const page = new Page;
-//FIXME: fix username to show up ^^
+var ws = configureWebSocket();
+const username = localStorage.getItem('userName') ?? 'User';
 
 let sel = document.getElementById("ddnList");
 //sel.addEventListener("change", showRecipeDdn);
@@ -117,7 +162,7 @@ async function deleteRecipe(url){
         const response = await fetch('/api/recipe', {
           method: 'DELETE',
           headers: {'content-type': 'application/json'},
-          body: url,
+          body: JSON.stringify(url),
         });
   
         console.log("deleted recipe from database");
@@ -130,11 +175,14 @@ async function deleteRecipe(url){
 async function shareRecipe(object){
     console.log("sharing recipe");
     console.log(object);
+
+    broadcastEvent(username, share, object);
+
     try {
         const response = await fetch('/api/shared', {
           method: 'POST',
           headers: {'content-type': 'application/json'},
-          body: url,
+          body: JSON.stringify(object),
         });
   
         console.log("shared recipe");

@@ -31,6 +31,14 @@ button {
     background-color: #d3e8f8;
 }
 
+.messages{
+    display: block;
+    width: 20%;
+    background-color: #acadae;
+    color: black;
+    padding: 1em;
+}
+
 .recipes-dropdown {
     display: none;
     width: 100%;
@@ -46,7 +54,7 @@ button {
 
 .recipe{
     display: block;
-    width: 55%;
+    width: 75%;
     background-color: white;
     padding: 1.5em;
 }
