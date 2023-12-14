@@ -73,3 +73,9 @@ in Simon and it uses cookies to pass information between the client and server. 
 behaving strangely, try logging out and logging back in. Sometimes it thinks it has stored your
 information when you first open the page even though it hasn't. You can also try refreshing the page if
 there seem to be an unusually large number of recipes.
+
+## Deliverable 7 (Websocket)
+
+Users can now share recipes. The notifications bar on the right will update when another user logs in.
+When the "share" button is clicked, the other users logged onto the server will get a message that shows
+which user shared a recipe and give a hyperlink to it.
