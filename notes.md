@@ -361,3 +361,155 @@ What will the following code using Promises output when executed?
   ```
   * This code outputs OK if x is not changed. It outputs error if it is.
 
+ 
+## Final Study Guide
+What ports are used for HTTP, HTTPS, SSH?
+* HTTP uses port 80
+* HTTPS uses port 443
+* SSH uses port 22
+
+What do HTTP status codes in the 300, 400, 500 range indicate?
+* 100's - information responses
+* 200's - successful responses
+* 300's - redircetion messages
+* 400's - client error responses
+* 500's - server error respones
+
+What does the HTTP header content-type allows you to do?
+* indicates the original media type of the data or resource (plain test, json, etc)
+
+What do the following attributes of a cookie do?
+* Domain - specifies which server can recieve the cookies
+* Path - specifies the URL path that the cookie is valid for (e.g. /blog and its subdomains /blog/home etc)
+* SameSite - can help prevent cross site forgery attacks. **Strict** only allows cookie transfer within sites of the same name, **lax** will send your cookie in top-level navigation like clicking a link, **none** will allow the cookie to be sent with any navigation
+* HTTPOnly - a flag that prevents the cookie from being stolen and used in client-side scripts
+  
+Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of /foo/bar?
+* |
+* |
+* |
+
+Given the following Express service code: What does the following JavaScript fetch return?
+* |
+* |
+* |
+
+Given the following MongoDB query
+`{ cost: { $gt: 10 }, name: /fran.*/}`
+select all of the matching documents.
+* name is Fran and cost is > 10
+
+How should you store user passwords in a database?
+* securely... you should hash them and probably salt them
+
+Assuming the following Node.js service code is executing with websockets, what will be logged to the console of the web browser?
+* |
+* |
+* |
+
+What is the WebSocket protocol used for?
+* Communication between users on a website.
+
+What is JSX and how are the curly braces rendered?
+* JSX is a file that contains react code
+* curly braces tell the parser that the information inside them is javascript instead of a string
+
+Assuming a HTML document with a 
+`<div id="root"></div>`
+element, what content will the following React component generate?
+     ```
+      function Welcome(props) {
+        return <h1>Hello, {props.name}</h1>;
+      }
+      function App() {
+        return (
+          <div>
+            <Welcome name="Sara" />
+            <Welcome name="Cahal" />
+            <Welcome name="Edite" />
+          </div>
+        );
+      }
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<App />);
+      ```
+* Hello, Sara
+* Hello, Cahal
+* Hello, Edite
+
+Assuming a HTML document with a 
+`<div id="root"></div>`
+element, what content will the following React component generate?
+    ```
+    function Numbers() { 
+      const numbers = [1, 2, 3, 4, 5];
+      const listItems = numbers.map((number) =>
+        <li>{number}</li>
+      );
+      return(<ul>{listItems}</ul>)
+    }
+    const root = ReactDOM.createRoot(document.getElementById('root')); 
+    root.render(<Numbers/>);
+    ```
+* 1
+* 2
+* 3
+* 4
+* 5
+  
+What does the following React component do?
+```
+function Example() {
+  // Declare a new state variable, which we'll call "count"  
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+```
+* increments count by one each time the button is clicked
+
+What are React Hooks used for?
+* React hooks allow you to use features like useState without writing a class component.
+
+What is the useEffect hook used for?
+* It allows you to represent lifecycle events like doing a certain effect every time the button is clicked
+
+What does this code do?
+```
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+```
+* Routes the user to different url paths and sets up the styling
+
+What role does npm play in web development?
+* npm is a package manager and software registry. It allows you to download software like react and manage dependencies
+
+What does package.json do in a npm project?
+* It is located in the root package and is a json file that contains project information like name, version, dependencies, etc. It can be used to run scripts, install and manage packages, etc.
+
+What does the fetch function do?
+* It goes through your API to access web endpoints. It lets you make HTTP requests from JavaScript
+
+What does node.js do?
+* It allows you to run javascript code outside of a browser
+
+What does Vite do?
+* It is a full web framework accesible from the command line. It is a fast way to scaffold and bundle projects and enables you to use react.
